@@ -35,5 +35,8 @@
     background-size: cover;
     background-position: center;
     height: 100vh;
-    
+    justify-content: right;
+}
+.intro-content {
+    width: 60%;
 }
