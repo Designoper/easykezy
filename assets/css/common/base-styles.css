@@ -27,8 +27,6 @@
     --bold-text: #f3efef;
     --list-number: #f1e203;
     --background-nav: #1f5e06;
-    --svg-primary-color: #ffffff;
-    --svg-secondary-color: #000000;
     scrollbar-color: var(--secondary-bg) var(--primary-bg);
 }
 
