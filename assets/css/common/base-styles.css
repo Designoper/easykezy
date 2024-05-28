@@ -27,6 +27,16 @@
     --bold-text: #f3efef;
     --list-number: #f1e203;
     --background-nav: #1f5e06;
+
+    --content-primary: #FFFFFF;
+    --content-secondary: #989898;
+    --content-inverse: #171717;
+
+    --content-state-pressed: #7E7E7E;
+    --content-state-disabled: #B2B2B2;
+
+    --semantic-color-blue: #1555FF;
+
     scrollbar-color: var(--secondary-bg) var(--primary-bg);
 }
 
