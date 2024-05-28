@@ -1,3 +1,27 @@
-.form-contacto {
-    left: 40%;
+main {
+    gap: 3em;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#form-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-contacto button {
+    padding: 0.5em;
+    background-color: #1f5e06;
+    transition: background-color 0.35s;
+	border-radius: 0.2em;
+
+    &:hover {
+        background-color: #388a17;
+    }
+}
+
+#form-contacto a {
+    background-color: rgba(255, 255, 255, 0);
 }
