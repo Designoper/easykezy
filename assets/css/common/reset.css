@@ -1,0 +1,38 @@
+:is(*, *::before, *::after) {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+:is(strong, em, address) {
+	all: unset;
+}
+
+:is(ol, ul) {
+	list-style: none;
+}
+
+:is(img, video) {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+summary {
+	cursor: pointer;
+}
+
+button {
+	all: unset;
+	display: grid;
+	cursor: pointer;
+}
+
+[popover] {
+	inset: unset;
+}
