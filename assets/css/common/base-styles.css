@@ -132,14 +132,18 @@ main {
     button.primary {
         background-color: var(--content-primary);
         color: var(--content-inverse);
-        padding: 0.25em 0.75em 0.25em 0.75em;
+        padding: 0.3em 0em 0.3em 0em;
         border-radius: 0.2em;
+        width: 100%;
+        text-align: center;
     }
     button.secondary {
         border: var(--content-primary) 0.13em solid;
         color: var(--content-primary);
-        padding: 0.25em 0.75em 0.25em 0.75em;
+        padding: 0.3em 0em 0.3em 0em;
         border-radius: 0.2em;
+        width: 100%;
+        text-align: center;
     }
 }
 
