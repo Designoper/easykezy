@@ -16,7 +16,7 @@
     padding-bottom: 0.85em;
 }
 .destacado {
-    width: 25%;
+    width: 30%;
 }
 .button-section {
     width: 100%;
@@ -27,6 +27,8 @@
 }
 .destacados {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     gap: 1.25em;
 }
 #main {
@@ -39,4 +41,7 @@
 }
 .intro-content {
     width: 60%;
+}
+#web-title {
+    text-align: left;
 }
