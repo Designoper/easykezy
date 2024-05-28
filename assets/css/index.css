@@ -6,6 +6,7 @@
     height: 10em;
     background-image: url("../img/videojuegos/diabloiv.jpg");
     background-size: cover;
+    background-position: center;
     border-radius: 0.3em;
     margin-bottom: 0.75em;
 }
@@ -27,4 +28,12 @@
 .destacados {
     display: flex;
     gap: 1.25em;
+}
+#main {
+    background-image: url("../img/index/background-home_06.png");
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
 }
