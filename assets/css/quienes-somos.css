@@ -11,8 +11,7 @@ main {
 					". . . . . . . . . . . ."
 					"img2 img2 img2 img2 img2 img2 img2 . p4 p4 p4 p4"
 					"img2 img2 img2 img2 img2 img2 img2 . p5 p5 p5 p5"
-					"img2 img2 img2 img2 img2 img2 img2 . p6 p6 p6 p6"
-					"img2 img2 img2 img2 img2 img2 img2 . p7 p7 p7 p7";
+					"img2 img2 img2 img2 img2 img2 img2 . p6 p6 p6 p6";
 
 				p {
 					&:nth-of-type(1) {
@@ -37,10 +36,6 @@ main {
 
 					&:nth-of-type(6) {
 						grid-area: p6;
-					}
-
-					&:nth-of-type(7) {
-						grid-area: p7;
 					}
 				}
 
