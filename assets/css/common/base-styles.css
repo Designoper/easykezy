@@ -129,6 +129,18 @@ main {
             transform: scale(1.07);
         }
     }
+    button.primary {
+        background-color: var(--content-primary);
+        color: var(--content-inverse);
+        padding: 0.25em 0.75em 0.25em 0.75em;
+        border-radius: 0.2em;
+    }
+    button.secondary {
+        border: var(--content-primary) 0.13em solid;
+        color: var(--content-primary);
+        padding: 0.25em 0.75em 0.25em 0.75em;
+        border-radius: 0.2em;
+    }
 }
 
 @media screen and (541px <=width) {
