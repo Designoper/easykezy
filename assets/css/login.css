@@ -1,3 +1,7 @@
 .form-login {
     padding-left: 100%;
 }
+
+.form-login a {
+    background-color: rgba(255, 255, 255, 0);
+}

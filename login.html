@@ -13,11 +13,24 @@
     <title></title>
     <meta name="description" content="">
 
+    <meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:locale" content="es">
+	<meta property="og:site_name" content="">
+
+	<meta name="twitter:title" content="">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="">
+
     <link href="./assets/css/common/reset.css" rel="preload stylesheet" as="style">
 	<link href="./assets/css/common/base-styles.css" rel="preload stylesheet" as="style">
 	<link href="./assets/css/common/header.css" rel="preload stylesheet" as="style">
-	<link href="./assets/css/login.css" rel="preload stylesheet" as="style">
 	<link href="./assets/css/common/footer.css" rel="preload stylesheet" as="style">
+    <link href="./assets/css/login.css" rel="preload stylesheet" as="style">
 </head>
 
 <body>
@@ -66,24 +79,29 @@
     -->
 
     <main>
-        <h2>Login</h2>
+        <h2>Iniciar Sesión</h2>
 
         <div id="form-login">
 
             <form action="#" method="post">
 
                 <label for="usuario">Nombre usuario</label>
+                <br>
                 <input type="text" name="usuario" id="usuario" required>
                 <br>
                 <br>
 
                 <label for="password">Contraseña</label>
+                <br>
                 <input type="password" name="password" id="password" required>
                 <br>
                 <br>
 
-                <button type="submit">Login</button>
+                <button type="submit">Acceder</button>
             </form>
+
+            <br>
+            <a href="./registro.html">¿No tienes cuenta? Registra una cuenta aquí</a>
 
         </div>
 
