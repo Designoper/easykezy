@@ -1,0 +1,18 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 7.5vw;
+    height: 12em;
+    align-items: center;
+    background-image: url("../../img/footer/Footerbackground.png");
+    width: 100%;
+}
+.app-stores {
+    width: 8em;
+}
+#social-media-list {
+    display: flex;
+}
+#store-list {
+    display: flex;
+}
