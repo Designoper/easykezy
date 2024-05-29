@@ -33,9 +33,9 @@ button {
 	cursor: pointer;
 }
 
-input {
+/* input {
 	all: unset;
-}
+} */
 
 [popover] {
 	inset: unset;

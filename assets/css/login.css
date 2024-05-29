@@ -1,12 +1,15 @@
 main {
     form {
         display: grid;
+        width: 100%;
         gap: 2em;
         padding: 2em;
         border-radius: 0.5em;
         background-color: #388a17;
 
         input {
+            width: inherit;
+            font: inherit;
             display: grid;
             padding: 0.35em 1em;
             border-radius: 0.5em;
@@ -18,6 +21,7 @@ main {
             list-style: none;
 
             li {
+                width: 100%;
                 display: grid;
                 gap: 0.5em;
             }
@@ -42,4 +46,19 @@ main {
         padding: 0;
         text-decoration: underline;
     }
+
+    p {
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    @media screen and (541px <=width) {
+        justify-content: center;
+
+        form {
+            width: 60%;
+        }
+    }
+
+
 }
