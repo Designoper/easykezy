@@ -1,44 +1,26 @@
-
-h4 {
-    display: flex;
-    justify-content: space-between;
-}
-
-article {
-    display: grid;
-    row-gap: 1em;
-}
-
-.destacado {
-    width: 30%;
-}
-
-.destacados {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 1.25em;
-}
-
-#main {
+main {
     background-image: url("../img/index/background-home_06.png");
-    width: 100%;
     background-size: cover;
     background-position: center;
     height: 100vh;
     justify-content: right;
-}
 
-.intro-content {
-    width: 60%;
-}
+    h2 {
+        text-align: left;
+    }
 
-#web-title {
-    text-align: left;
-    padding-bottom: 10px;
-}
+    h4 {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.intro {
-    display: block;
-    margin-bottom: 2em;
+    article {
+        display: grid;
+        row-gap: 1em;
+    }
+
+    section {
+        display: grid;
+        row-gap: 5em;
+    }
 }
