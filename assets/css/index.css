@@ -1,28 +1,25 @@
-/* #web-intro-text {
-    font-weight: 200;
-} */
 
-.destacados-header {
+h4 {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 0.85em;
 }
+
+article {
+    display: grid;
+    row-gap: 1em;
+}
+
 .destacado {
     width: 30%;
 }
-.button-section {
-    width: 100%;
-    padding-top: 1.2em;
-}
-.card-buttons {
-    margin-bottom: 0.6em;
-}
+
 .destacados {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 1.25em;
 }
+
 #main {
     background-image: url("../img/index/background-home_06.png");
     width: 100%;
@@ -31,13 +28,16 @@
     height: 100vh;
     justify-content: right;
 }
+
 .intro-content {
     width: 60%;
 }
+
 #web-title {
     text-align: left;
     padding-bottom: 10px;
 }
+
 .intro {
     display: block;
     margin-bottom: 2em;
