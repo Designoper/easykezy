@@ -44,4 +44,9 @@
 }
 #web-title {
     text-align: left;
+    padding-bottom: 10px;
+}
+.intro {
+    display: block;
+    margin-bottom: 2em;
 }
