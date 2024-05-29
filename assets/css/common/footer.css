@@ -1,27 +1,32 @@
 footer {
-    display: flex;
+    display: grid;
+    gap: 2em;
     justify-content: space-between;
-    padding: 1em 7.5vw;
-    /* height: 12em; */
+    padding: 2em 10vw;
     align-items: center;
     background-image: url("../../img/footer/background-footer.jpg");
-    /* width: 100%; */
-}
-.app-stores {
-    width: 8em;
-}
-#social-media-list {
-    display: flex;
-    padding-top: 1em;
 
-    li {
-        margin-right: 1em;
+    #social-media-list {
+        display: flex;
+        column-gap: 1em;
+        padding-top: 1em;
     }
-}
-#store-list {
-    display: flex;
 
-    img {
-        margin-right: 2em;
+    #store-list {
+        display: flex;
+        column-gap: 1em;
+
+        img {
+            width: 7.5em;
+        }
+    }
+
+    svg {
+        width: 2em;
+    }
+
+    @media screen and (541px <=width) {
+        display: flex;
+        flex-wrap: wrap;
     }
 }
