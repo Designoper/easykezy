@@ -1,15 +1,7 @@
-#web-intro-text {
+/* #web-intro-text {
     font-weight: 200;
-}
-.intro-card-img {
-    width: 100%;
-    height: 10em;
-    background-image: url("../img/videojuegos/diabloiv.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 0.3em;
-    margin-bottom: 0.75em;
-}
+} */
+
 .destacados-header {
     display: flex;
     justify-content: space-between;
