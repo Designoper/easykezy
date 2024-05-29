@@ -66,28 +66,25 @@
     -->
 
     <main>
-        <h2>Buzón de contacto</h2>
 
-        <div id="form-contacto">
+        <h1>Buzón de contacto</h1>
 
-            <form action="#" method="post">
+        <form action="#" method="post">
 
-                <label for="asunto">Asunto</label>
-                <br>
-                <input type="text" name="asunto" id="asunto" required>
-                <br>
-                <br>
+            <ul>
+                <li>
+                    <label for="asunto">Asunto</label>
+                    <input type="text" name="asunto" id="asunto" required>
+                </li>
+                <li>
+                    <label for="contenido-mail">Contenido</label>
+                    <textarea name="contenido-mail" id="contenido-mail" cols="100" rows="20" placeholder="Escriba aquí el contenido del mensaje"></textarea>
 
-                <label for="contenido-mail">Contenido</label>
-                <br>
-                <textarea name="contenido-mail" id="contenido-mail" cols="100" rows="20" placeholder="Escriba aquí el contenido del mensaje"></textarea>
-                <br>
-                <br>
+                </li>
+            </ul>
 
-                <button type="submit">Enviar</button>
-            </form>
-
-        </div>
+            <button>Enviar</button>
+        </form>
 
     </main>
 
