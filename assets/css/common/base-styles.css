@@ -143,7 +143,13 @@ main {
         padding: 0.3em 0em 0.3em 0em;
         border-radius: 0.2em;
         width: 100%;
-        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        
+        svg {
+            margin-right: 0.5em;
+        }
     }
 }
 
