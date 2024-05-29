@@ -1,36 +1,72 @@
 main {
-    gap: 3em;
-    display: flex;
-    flex-direction: column;
-    
-}
-
-#form-registro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#form-registro form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-}
-
-#form-registro button {
-    padding: 0.5em;
-    background-color: #1f5e06;
-    transition: background-color 0.35s;
-	border-radius: 0.2em;
-
-    &:hover {
+    form {
+        display: grid;
+        /* width: 100%; */
+        gap: 2em;
+        padding: 2em;
+        border-radius: 0.5em;
         background-color: #388a17;
-    }
-}
 
-#form-registro a {
-    background-color: rgba(255, 255, 255, 0);
-    padding: 0;
-    text-decoration: underline;
+        input {
+            width: inherit;
+            font: inherit;
+            display: grid;
+            padding: 0.35em 1em;
+            border-radius: 0.5em;
+            color: #1f5e06;
+            background-color: #ffffff;
+        }
+
+        ul {
+            display: grid;
+
+            li {
+                width: 100%;
+                display: grid;
+                gap: 0.5em;
+            }
+        }
+    }
+
+    button {
+        width: fit-content;
+        justify-self: center;
+        padding: 0.5em;
+        background-color: #1f5e06;
+        transition: background-color 0.35s;
+        border-radius: 0.2em;
+
+        &:hover {
+            background-color: #388a17;
+        }
+    }
+
+    a {
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0;
+        text-decoration: underline;
+    }
+
+    p {
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    @media screen and (541px <=width) {
+        justify-content: center;
+
+        form {
+            width: 60%;
+        }
+    }
+
+    @media screen and (1083px <=width) {
+        form {
+            width: 25%;
+        }
+
+        li{
+            margin-bottom: 0;
+        }
+    }
 }
