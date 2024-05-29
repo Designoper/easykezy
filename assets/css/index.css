@@ -23,4 +23,11 @@ main {
         display: grid;
         row-gap: 5em;
     }
+
+    @media screen and (541px <=width) {
+        section {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 4em;
+        }
+    }
 }
