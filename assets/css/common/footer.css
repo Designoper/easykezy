@@ -2,10 +2,10 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 1em 7.5vw;
-    height: 12em;
+    /* height: 12em; */
     align-items: center;
     background-image: url("../../img/footer/background-footer.jpg");
-    width: 100%;
+    /* width: 100%; */
 }
 .app-stores {
     width: 8em;
@@ -13,14 +13,14 @@ footer {
 #social-media-list {
     display: flex;
     padding-top: 1em;
-    
+
     li {
         margin-right: 1em;
     }
 }
 #store-list {
     display: flex;
-    
+
     img {
         margin-right: 2em;
     }
