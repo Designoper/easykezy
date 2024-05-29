@@ -1,7 +1,7 @@
 main {
     form {
         display: grid;
-        width: 100%;
+        /* width: 100%; */
         gap: 2em;
         padding: 2em;
         border-radius: 0.5em;
@@ -18,7 +18,7 @@ main {
         }
 
         ul {
-            list-style: none;
+            display: grid;
 
             li {
                 width: 100%;
@@ -60,5 +60,13 @@ main {
         }
     }
 
+    @media screen and (1083px <=width) {
+        form {
+            width: 25%;
+        }
 
+        li{
+            margin-bottom: 0;
+        }
+    }
 }
