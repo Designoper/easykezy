@@ -1,5 +1,10 @@
 main {
 	@media screen and (1083px <=width) {
+		ul {
+			display: block;
+			column-count: 3;
+			column-gap: 4em;
+		}
 		section {
 			&:nth-of-type(1) {
 				column-gap: 0;
