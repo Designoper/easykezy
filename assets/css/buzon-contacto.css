@@ -1,11 +1,10 @@
 main {
     form {
         display: grid;
-        /* width: 100%; */
         gap: 2em;
         padding: 2em;
         border-radius: 0.5em;
-        background-color: #388a17;
+        background-color: var(--background-nav);
 
         input {
             width: inherit;
@@ -13,8 +12,8 @@ main {
             display: grid;
             padding: 0.35em 1em;
             border-radius: 0.5em;
-            color: #1f5e06;
-            background-color: #ffffff;
+            color: var(--secondary-bg);
+            background-color: var(--text);
         }
 
         ul {
@@ -32,24 +31,24 @@ main {
         width: fit-content;
         justify-self: center;
         padding: 0.5em;
-        background-color: #1f5e06;
+        background-color: var(--secondary-bg);
         transition: background-color 0.35s;
         border-radius: 0.2em;
 
         &:hover {
-            background-color: #388a17;
+            background-color: var(--background-nav);
         }
-    }
-
-    a {
-        background-color: rgba(255, 255, 255, 0);
-        padding: 0;
-        text-decoration: underline;
     }
 
     p {
         text-align: center;
         text-wrap: balance;
+    }
+
+    textarea {
+        width: 100%;
+        height: 50vw;
+        border-radius: 0.5em;
     }
 
     @media screen and (541px <=width) {
@@ -62,11 +61,15 @@ main {
 
     @media screen and (1083px <=width) {
         form {
-            width: 25%;
+            width: 35%;
         }
 
-        li{
+        li {
             margin-bottom: 0;
+        }
+
+        textarea {
+            height: 20vw;
         }
     }
 }

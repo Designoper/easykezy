@@ -21,12 +21,12 @@
 }
 
 :root {
-    --primary-bg: #121212;
-    --secondary-bg: #03460b;
+    --primary-bg: #201f1e;
+    --secondary-bg: #000000;
     --text: #e0e0e0;
     --bold-text: #f3efef;
     --list-number: #f1e203;
-    --background-nav: #1f5e06;
+    --background-nav: #333333;
 
     --content-primary: #FFFFFF;
     --content-secondary: #989898;
@@ -149,7 +149,7 @@ button.secondary {
     align-items: center;
     display: flex;
     justify-content: center;
-    
+
     svg {
         margin-right: 0.5em;
     }
