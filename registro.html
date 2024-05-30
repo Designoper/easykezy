@@ -19,7 +19,7 @@
 	<link href="./assets/css/registro.css" rel="preload stylesheet" as="style">
 	<link href="./assets/css/common/footer.css" rel="preload stylesheet" as="style">
 
-	<script type="module" src="./assets/js/registro.js"></script>
+	<script src="./assets/js/registro.mjs" defer type="module"></script>
 
 </head>
 
@@ -75,10 +75,6 @@
 
             <ul>
                 <li>
-                    <label for="usuario">Nombre usuario</label>
-                    <input type="text" name="usuario" id="usuario">
-                </li>
-                <li>
                     <label for="email">Email*</label>
                     <input type="email" name="email" id="email" required>
                 </li>
@@ -92,7 +88,7 @@
                 </li>
             </ul>
 
-            <button onclick="registerUser()" onsubmit="false">Registrar</button>
+            <button type="button" id="submit">Registrar</button>
 
             <p>¿Ya tienes cuenta? <a href="./login.html">Accede aquí</a></p>
 

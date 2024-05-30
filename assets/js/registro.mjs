@@ -2,9 +2,11 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const button = document.getElementById("submit");
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -39,24 +41,24 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
 
 // const analytics = getAnalytics(app);
 
 function registerUser() {
     // Get inputs
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var confPassword = document.getElementById("conf-password").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confPassword = document.getElementById("conf-password").value;
 
     if (password == confPassword) {
         // Register
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
-            var user = userCredential.user;
+            var user = userCredential.user.email;
         
-            alert("User " + user + " registered");
+            alert("User with email " + user + " registered");
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -70,3 +72,5 @@ function registerUser() {
     }
     
 }
+
+button.onclick = () => registerUser();
