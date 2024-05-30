@@ -95,7 +95,6 @@ main {
         cursor: pointer;
 
         color: #333;
-
     }
 
     .popup #emailInput {
@@ -127,6 +126,7 @@ main {
         cursor: pointer;
 
         font-size: 16px;
+        resize: both;
 
     }
 }
