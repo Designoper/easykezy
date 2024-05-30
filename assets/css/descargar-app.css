@@ -1,0 +1,7 @@
+main {
+	@media screen and (1083px <=width) {
+		section {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
