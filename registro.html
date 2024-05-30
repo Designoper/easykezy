@@ -18,6 +18,9 @@
 	<link href="./assets/css/common/header.css" rel="preload stylesheet" as="style">
 	<link href="./assets/css/registro.css" rel="preload stylesheet" as="style">
 	<link href="./assets/css/common/footer.css" rel="preload stylesheet" as="style">
+
+	<script type="module" src="./assets/js/registro.js"></script>
+
 </head>
 
 <body>
@@ -68,12 +71,12 @@
     <main>
         <h1>Registrarse</h1>
 
-        <form action="#" method="post">
+        <form action="" method="post">
 
             <ul>
                 <li>
-                    <label for="usuario">Nombre usuario*</label>
-                    <input type="text" name="usuario" id="usuario" required>
+                    <label for="usuario">Nombre usuario</label>
+                    <input type="text" name="usuario" id="usuario">
                 </li>
                 <li>
                     <label for="email">Email*</label>
@@ -89,7 +92,7 @@
                 </li>
             </ul>
 
-            <button>Registrar</button>
+            <button onclick="registerUser()" onsubmit="false">Registrar</button>
 
             <p>¿Ya tienes cuenta? <a href="./login.html">Accede aquí</a></p>
 
