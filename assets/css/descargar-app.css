@@ -1,7 +1,44 @@
 main {
 	@media screen and (1083px <=width) {
 		section {
+			row-gap: 2em;
+			column-gap: 5em;
 			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: min-content;
+
+			grid-template-areas:
+
+				"h2 img1 img1"
+				"p1 img1 img1"
+				"p2 img1 img1"
+				"p3 img1 img1"
+				"a1 img1 img1";
+
+			h2 {
+				grid-area: h2;
+			}
+
+			p {
+				&:nth-of-type(1) {
+					grid-area: p1;
+				}
+
+				&:nth-of-type(2) {
+					grid-area: p2;
+				}
+
+				&:nth-of-type(3) {
+					grid-area: p3;
+				}
+			}
+
+			a {
+				grid-area: a1;
+			}
+
+			img {
+				grid-area: img1;
+			}
 		}
 	}
 }
