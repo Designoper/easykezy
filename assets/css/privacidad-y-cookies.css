@@ -12,9 +12,9 @@ main {
             }
         }
 
-        ul {
+        /* ul {
             display: block !important;
-        }
+        } */
 
         p a {
             background-color: var(--primary-bg);
