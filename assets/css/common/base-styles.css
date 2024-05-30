@@ -193,11 +193,7 @@ button.secondary {
             font-size: 2em;
         }
 
-        ul {
-            display: block;
-            column-count: 3;
-            column-gap: 4em;
-        }
+
 
         li {
             margin-bottom: 1.5em;
