@@ -100,48 +100,57 @@ main {
 
 }
 
+
 .destacado {
     padding: 4em 7.5vw 6em;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     background-image: url("../img/videojuegos/warhammer_03.png");
-    background-size: 100%; /* Hace que la imagen cubra todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: 250%;
+    background-position: center;
+    background-repeat: no-repeat;
     gap: 3em;
     width: 100%;
-    height: 100vh;
 
     .destacado-left {
-        width: 50%;
-        align-items: center;
-        margin-top: auto;
-        margin-bottom: auto;
+        margin: auto;
+        display: grid;
+        row-gap: 1em;
 
-        img {
-            width: 75%;
+        p {
+            padding: 1em 0em;
         }
+
     }
 
     .destacado-right {
-        width: 50%;
-        margin-top: auto;
-        margin-bottom: auto;
+        margin: auto;
+
+        img {
+            box-shadow: 0px 40px 45px -20px rgba(0,0,0,0.27);
+        }
     }
     
-
     .platform-icons{
+        padding-top: 1em;
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        width: 10em;
+        align-items: center;
+        width: auto;
     }
 }
 
 @media screen and (541px <=width) {
     .game-list {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3em;
+        column-gap: 3em;
+    }
+    .destacado {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 3em;
         column-gap: 3em;
+        background-size: 100%;
     }
 }
 
@@ -151,6 +160,15 @@ main {
         row-gap: 3em;
         column-gap: 3em;
     }
+
+    .destacado {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 3em;
+        column-gap: 3em;
+        background-size: 100%;
+        
+    }
+
 }
 
 
