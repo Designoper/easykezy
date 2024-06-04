@@ -64,7 +64,7 @@ onAuthStateChanged(auth, (user) => {
 			<li><a href="./tienda.html">Tienda</a></li>
 			<li><a href="./descargar-app.html">App</a></li>
 			<li><a href="./buzon-contacto.html">Contacto</a></li>
-			<li><a href="./cerrar-sesion.html" aria-current="page">Cerrar sesión</a></li>
+			<li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
 		</ul>
       `
 
@@ -84,7 +84,7 @@ onAuthStateChanged(auth, (user) => {
 			<li><a href="./tienda.html">Tienda</a></li>
 			<li><a href="./descargar-app.html">App</a></li>
 			<li><a href="./buzon-contacto.html">Contacto</a></li>
-			<li><a href="./login.html" aria-current="page">Iniciar sesión</a></li>
+			<li><a href="./login.html">Iniciar sesión</a></li>
 			<li><a href="./registro.html">Registrarse</a></li>
 		</ul>
       `
