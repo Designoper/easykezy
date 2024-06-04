@@ -171,4 +171,21 @@ main {
 
 }
 
+.cookies {
+    display: flex;
+    padding: 4em 12em;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    .cookie-buttons {
+        display: flex;
+        column-gap: 2em;
+        width: 30%;
+    }
+
+    img {
+        width: 2em;
+    }
+}
 
