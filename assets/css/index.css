@@ -106,7 +106,7 @@ main {
     padding: 4em 7.5vw 6em;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    background-image: url("../img/videojuegos/warhammer_03.png");
+    background-image: url("../img/index/public/warhammer-bg.avif");
     background-size: 250%;
     background-position: center;
     background-repeat: no-repeat;
