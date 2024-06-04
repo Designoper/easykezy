@@ -60,11 +60,15 @@ main {
     }
 
     @media screen and (1083px <=width) {
+        h1 {
+            font-size: 2em;
+        }
+
         form {
             width: 25%;
         }
 
-        li{
+        li {
             margin-bottom: 0;
         }
     }
