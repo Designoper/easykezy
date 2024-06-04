@@ -173,10 +173,19 @@ main {
 
 .cookies {
     display: flex;
-    padding: 4em 12em;
+    padding: 2em 4em;
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    background-color: var(--primary-bg);
+    border-radius: 0.5em;
+    border: var(--stroke) 0.3em solid;
+
+    a {
+        background: none;
+        text-decoration: underline;
+        padding: 0;
+    }
 
     .cookie-buttons {
         display: flex;
@@ -185,7 +194,7 @@ main {
     }
 
     img {
-        width: 2em;
+        width: 3em;
     }
 }
 
