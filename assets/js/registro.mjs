@@ -62,9 +62,25 @@ function registerUser() {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
+            
+            // Create user ID
+            var tempUser = email.split("@");
+            var userId = "";
+
+            // Get rid of "."
+            if (tempUser[0].includes(".")){
+                var str = tempUser[0].split(".");
+
+                str.forEach(element => {
+                    userId += element;
+                });
+            }
+            else {
+                userId = tempUser[0];
+            }
+
             // Add registered user to realtime database for App
-            var userId = email.split("@");
-            set(ref(db, 'users/' + userId[0]), {
+            set(ref(db, 'users/' + userId), {
                 admin: false,
                 email: email,
             })
