@@ -177,6 +177,7 @@ main {
     justify-items: center;
     row-gap: 1em;
     position: fixed;
+    bottom: 2em;
     padding: 1em 2em 1.1em 2em;
     align-items: center;
     z-index: 90;
