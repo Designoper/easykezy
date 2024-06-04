@@ -32,11 +32,11 @@ main {
         justify-self: center;
         padding: 0.5em;
         background-color: var(--secondary-bg);
-        transition: background-color 0.35s;
+        transition: transform 0.35s;
         border-radius: 0.2em;
 
         &:hover {
-            background-color: var(--background-nav);
+            transform: scale(1.07);
         }
     }
 
