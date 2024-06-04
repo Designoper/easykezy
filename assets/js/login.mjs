@@ -4,7 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const button = document.getElementById("submit");
 
@@ -50,20 +50,34 @@ function signIn() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
 
-  // Sign in
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const data = userCredential.user.email;
+  // Sets login persistence to browser session
+  setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
     
-    alert("Signed in as " + data);
+    return signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      window.location.href="index.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+  
+      console.log(errorMessage + " Error Code: " + errorCode);
+    });
   })
   .catch((error) => {
+    // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
 
     console.log(errorMessage + " Error Code: " + errorCode);
   });
+
+  
 }
 
 button.onclick = () => signIn();
