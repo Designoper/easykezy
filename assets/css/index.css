@@ -173,11 +173,12 @@ main {
 }
 
 .cookies {
-    display: flex;
+    display: grid;
+    justify-items: center;
+    row-gap: 1em;
     position: fixed;
-    padding: 2em 4em;
+    padding: 1em 2em 1.1em 2em;
     align-items: center;
-    top: 80vh;
     z-index: 90;
     width: 90%;
     justify-content: space-between;
@@ -193,11 +194,21 @@ main {
 
     .cookie-buttons {
         display: flex;
-        column-gap: 2em;
-        width: 30%;
+        column-gap: 1em;
+        width: 100%;
+
     }
 
     img {
         width: 3em;
+    }
+}
+
+@media screen and (541px <=width) {
+    .cookies {
+        grid-template-columns: 0.25fr 2fr 2fr;
+        justify-content: left;
+        row-gap: 3em;
+        column-gap: 3em;
     }
 }
