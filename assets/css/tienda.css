@@ -116,4 +116,13 @@ main {
 
 }
 
+@media screen and (1024px <=width) {
+    .game-list {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3em;
+        column-gap: 3em;
+    }
+
+}
+
 
