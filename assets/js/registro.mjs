@@ -6,6 +6,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
 const button = document.getElementById("submit");
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -42,10 +44,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getDatabase(app);
 
 // const analytics = getAnalytics(app);
 
 function registerUser() {
+    // Disable button so user cannot spam
+    button.setAttribute("disabled","");
+
     // Get inputs
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
@@ -56,7 +62,15 @@ function registerUser() {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
-            window.location.href="index.html";
+
+            // Add registered user to realtime database for App
+            var userId = email.split("@");
+            set(ref(db, 'users/' + userId[0]), {
+                admin: false,
+                email: email,
+            })
+
+            setTimeout(function(){window.location.href="index.html";}, 1000);
         })
         .catch((error) => {
             var errorCode = error.code;
