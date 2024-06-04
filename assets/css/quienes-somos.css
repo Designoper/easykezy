@@ -1,9 +1,11 @@
 main {
 	@media screen and (1083px <=width) {
 		section {
+			column-gap: 0.5em;
 			&:nth-of-type(1) {
 				grid-template: auto / repeat(12, 1fr);
-				grid-template-areas: "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2"
+				grid-template-areas:
+					"h2 h2 h2 h2 . img1 img1 img1 img1 img1 img1 img1"
 					"p1 p1 p1 p1 . img1 img1 img1 img1 img1 img1 img1"
 					"p2 p2 p2 p2 . img1 img1 img1 img1 img1 img1 img1"
 					"p3 p3 p3 p3 . img1 img1 img1 img1 img1 img1 img1"
@@ -41,6 +43,7 @@ main {
 
 				h2 {
 					grid-area: h2;
+					text-align: left;
 				}
 
 				img {
