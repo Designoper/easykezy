@@ -171,4 +171,30 @@ main {
 
 }
 
+.cookies {
+    display: flex;
+    padding: 2em 4em;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    background-color: var(--primary-bg);
+    border-radius: 0.5em;
+    border: var(--stroke) 0.3em solid;
+
+    a {
+        background: none;
+        text-decoration: underline;
+        padding: 0;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        column-gap: 2em;
+        width: 30%;
+    }
+
+    img {
+        width: 3em;
+    }
+}
 
