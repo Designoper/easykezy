@@ -13,7 +13,9 @@
     --content-state-pressed: #7E7E7E;
     --content-state-disabled: #B2B2B2;
 
-    --semantic-color-blue: #1555FF;
+    --stroke: #2F2F2F;
+    
+    --semantic-color-blue: #205afb;
 
     scrollbar-color: var(--secondary-bg) var(--primary-bg);
 }
