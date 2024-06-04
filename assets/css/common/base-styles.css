@@ -14,7 +14,7 @@
     --content-state-disabled: #B2B2B2;
 
     --stroke: #2F2F2F;
-    
+
     --semantic-color-blue: #205afb;
 
     scrollbar-color: var(--secondary-bg) var(--primary-bg);
@@ -60,7 +60,7 @@ li {
 
     &::marker {
         font-weight: bold;
-        color: var(--list-number);
+        /* color: var(--list-number); */
         font-size: 1.25em;
     }
 }
@@ -172,8 +172,6 @@ button.secondary {
         h2 {
             font-size: 2em;
         }
-
-
 
         li {
             margin-bottom: 1.5em;

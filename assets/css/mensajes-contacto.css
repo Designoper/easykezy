@@ -1,0 +1,14 @@
+main {
+	ul {
+		list-style: none;
+	}
+
+	@media screen and (1083px <=width) {
+		section {
+			gap: 3em;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+
+}
