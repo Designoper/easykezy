@@ -62,7 +62,6 @@ function registerUser() {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
-
             // Add registered user to realtime database for App
             var userId = email.split("@");
             set(ref(db, 'users/' + userId[0]), {
@@ -70,6 +69,7 @@ function registerUser() {
                 email: email,
             })
 
+            // Redirect after 1 sec
             setTimeout(function(){window.location.href="index.html";}, 1000);
         })
         .catch((error) => {
