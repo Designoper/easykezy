@@ -5,21 +5,22 @@ main {
 			column-count: 3;
 			column-gap: 4em;
 		}
+
 		section {
 			&:nth-of-type(1) {
 				column-gap: 0;
-				grid-template: auto / repeat(13, 1fr);
-				grid-template-areas: "h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2 h2"
+				grid-template: auto / repeat(12, 1fr);
+				grid-template-areas:
+					"h2 h2 h2 h2 h2 . img1 img1 img1 img1 img1 img1 img1"
 					"p1 p1 p1 p1 p1 . img1 img1 img1 img1 img1 img1 img1"
 					"p2 p2 p2 p2 p2 . img1 img1 img1 img1 img1 img1 img1"
 					"p3 p3 p3 p3 p3 . img1 img1 img1 img1 img1 img1 img1"
-					"p4 p4 p4 p4 p4 . img1 img1 img1 img1 img1 img1 img1"
 					". . . . . . . . . . . . ."
 					". . . . . . . . . . . . ."
+					"img2 img2 img2 img2 img2 img2 img2 . p4 p4 p4 p4 p4"
 					"img2 img2 img2 img2 img2 img2 img2 . p5 p5 p5 p5 p5"
 					"img2 img2 img2 img2 img2 img2 img2 . p6 p6 p6 p6 p6"
-					"img2 img2 img2 img2 img2 img2 img2 . p7 p7 p7 p7 p7"
-					"img2 img2 img2 img2 img2 img2 img2 . p8 p8 p8 p8 p8";
+					"img2 img2 img2 img2 img2 img2 img2 . p7 p7 p7 p7 p7";
 
 				p {
 					&:nth-of-type(1) {
@@ -45,16 +46,19 @@ main {
 					&:nth-of-type(6) {
 						grid-area: p6;
 					}
+
 					&:nth-of-type(7) {
 						grid-area: p7;
 					}
-					&:nth-of-type(8) {
+
+					/* &:nth-of-type(8) {
 						grid-area: p8;
-					}
+					} */
 				}
 
 				h2 {
 					grid-area: h2;
+					text-align: left;
 				}
 
 				img {
