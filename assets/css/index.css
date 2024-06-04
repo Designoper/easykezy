@@ -1,5 +1,5 @@
 main {
-    background-image: url("../img/index/background_mch.png");
+    background-image: url("../img/index/public/background_mch.avif");
     background-size: cover;
     background-position: center;
     justify-content: right;
@@ -59,7 +59,7 @@ main {
         position: relative;
         z-index: 2;
         border-radius: 0.4em;
-    
+
     }
 
     h2 {
@@ -71,7 +71,7 @@ main {
         justify-content: space-between;
         z-index: 3;
     }
-    
+
     .card-list:after {
         content: "";
         position: absolute;
@@ -84,7 +84,7 @@ main {
         cursor: pointer;
         border-radius: 0.4em;
     }
-    
+
     .ofert {
         width: 100%;
         text-align: right;
@@ -131,7 +131,7 @@ main {
             box-shadow: 0px 40px 45px -20px rgba(0,0,0,0.27);
         }
     }
-    
+
     .platform-icons{
         padding-top: 1em;
         display: flex;
@@ -167,7 +167,7 @@ main {
         row-gap: 3em;
         column-gap: 3em;
         background-size: 100%;
-        
+
     }
 
 }
@@ -201,4 +201,3 @@ main {
         width: 3em;
     }
 }
-
