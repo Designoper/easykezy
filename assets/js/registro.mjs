@@ -56,9 +56,7 @@ function registerUser() {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
-            var user = userCredential.user.email;
-        
-            alert("User with email " + user + " registered");
+            window.location.href="index.html";
         })
         .catch((error) => {
             var errorCode = error.code;
