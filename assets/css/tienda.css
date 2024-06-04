@@ -99,7 +99,7 @@ main {
 }
 
 
-@media screen and (541px <=width) {
+@media screen and (541px <= width) {
     .game-list {
         grid-template-columns: repeat(5, 1fr);
         row-gap: 3em;
@@ -107,9 +107,18 @@ main {
     }
 }
 
-@media screen and (1083px <=width) {
+@media screen and (1083px <= width) {
     .game-list {
         grid-template-columns: repeat(5, 1fr);
+        row-gap: 3em;
+        column-gap: 3em;
+    }
+
+}
+
+@media screen and (1024px <= width) and (1083px >= width) {
+    .game-list {
+        grid-template-columns: repeat(3, 1fr);
         row-gap: 3em;
         column-gap: 3em;
     }
