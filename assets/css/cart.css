@@ -7,8 +7,8 @@
 
     .cart-photo {
         background-image: url("../img/videojuegos/STREETFIGHTER.jpg");
-        width: 5em;
-        height: 5em;
+        width: 8em;
+        height: 8em;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -23,5 +23,13 @@
         background-color: black;
         border-radius: 0.7em;
     }
+
+    .cart-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
     
 }
