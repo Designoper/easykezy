@@ -4,7 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, fetchSignInMethodsForEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const button = document.getElementById("submit");
 
@@ -49,6 +49,11 @@ function signIn() {
   // Get inputs
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
+  let emailerror = document.getElementById("emailerror");
+  let passworderror = document.getElementById("passworderror");
+
+  emailerror.innerHTML = "";
+  passworderror.innerHTML = "";
 
   // Sets login persistence to browser session
   setPersistence(auth, browserSessionPersistence)
@@ -64,16 +69,31 @@ function signIn() {
     })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
-  
-      console.log(errorMessage + " Error Code: " + errorCode);
+      if(errorCode == "auth/invalid-email"){
+        emailerror.innerHTML = "El mail introducido no esta regristado";
+        const errorMessage = error.message;
+        console.log(errorMessage + " Error Code: " + errorCode);
+      }
+      else if(errorCode == "auth/invalid-credential"){
+        passworderror.innerHTML = "La contraseña es incorrecta";
+        const errorMessage = error.message;
+        console.log(errorMessage + " Error Code: " + errorCode);
+      }
+      else if(errorCode == "auth/missing-password"){
+        passworderror.innerHTML = "Introduce la contraseña";
+        const errorMessage = error.message;
+        console.log(errorMessage + " Error Code: " + errorCode);
+      }
+      else{
+        const errorMessage = error.message;
+        console.log(errorMessage + " Error Code: " + errorCode);
+      }
+      
     });
   })
   .catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
-    const errorMessage = error.message;
-
     console.log(errorMessage + " Error Code: " + errorCode);
   });
 
