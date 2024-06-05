@@ -8,10 +8,12 @@ main {
 		opacity: 50%;
 	}
 
-	.message{
+	.message {
 		padding: 1em;
 		background-color: black;
 		border-radius: 0.5em;
+		display: grid;
+		gap: 1em;
 	}
 
 	article {
@@ -22,6 +24,10 @@ main {
 
 	ul {
 		list-style: none;
+	}
+
+	h3 {
+		font-size: 1.35em;
 	}
 
 	@media screen and (541px <=width) {

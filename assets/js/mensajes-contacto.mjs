@@ -54,8 +54,8 @@ get(child(dbRef, "mailbox")).then((snapshot) => {
 				<ul>
 					<li><span>Nombre:</span> ${mailList[element].name}</li>
 					<li><span>Correo:</span> ${mailList[element].email}</li>
-					<li><span>Asunto:</span> ${mailList[element].subject}</li>
-					<li class="message">${mailList[element].body}</li>
+					<li class="message"><h3>${mailList[element].subject}</h3>
+					${mailList[element].body}</li>
 				</ul>
 
 			</article>
