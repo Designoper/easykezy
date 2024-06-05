@@ -9,6 +9,9 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const button = document.getElementById("submit");
+const span = document.getElementById("passwordCheck");
+const password = document.getElementById("password");
+const password2 = document.getElementById("conf-password");
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -50,7 +53,7 @@ const db = getDatabase(app);
 
 function registerUser() {
     // Disable button so user cannot spam
-    button.setAttribute("disabled","");
+    button.setAttribute("disabled", "");
 
     // Get inputs
     let email = document.getElementById("email").value;
@@ -58,47 +61,63 @@ function registerUser() {
     let confPassword = document.getElementById("conf-password").value;
 
     if (password == confPassword) {
+        // span.innerHTML = "";
         // Register
         createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in 
-            
-            // Create user ID
-            var tempUser = email.split("@");
-            var userId = "";
+            .then((userCredential) => {
+                // Signed in
 
-            // Get rid of "."
-            if (tempUser[0].includes(".")){
-                var str = tempUser[0].split(".");
+                // Create user ID
+                var tempUser = email.split("@");
+                var userId = "";
 
-                str.forEach(element => {
-                    userId += element;
-                });
-            }
-            else {
-                userId = tempUser[0];
-            }
+                // Get rid of "."
+                if (tempUser[0].includes(".")) {
+                    var str = tempUser[0].split(".");
 
-            // Add registered user to realtime database for App
-            set(ref(db, 'users/' + userId), {
-                admin: false,
-                email: email,
+                    str.forEach(element => {
+                        userId += element;
+                    });
+                }
+                else {
+                    userId = tempUser[0];
+                }
+
+                // Add registered user to realtime database for App
+                set(ref(db, 'users/' + userId), {
+                    admin: false,
+                    email: email,
+                })
+
+                // Redirect after 1 sec
+                setTimeout(function () { window.location.href = "index.html"; }, 1000);
             })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
 
-            // Redirect after 1 sec
-            setTimeout(function(){window.location.href="index.html";}, 1000);
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-        
-            console.log(errorMessage + " Error code: " + errorCode);
-        });
+                console.log(errorMessage + " Error code: " + errorCode);
+
+            });
     }
-    else {
-        alert("Las contraseñas no coinciden")
-    }
-    
+    // else {
+    //    span.innerHTML = "Las contraseñas no coinciden"
+    // }
+
 }
 
 button.onclick = () => registerUser();
+
+function passwordMatch() {
+    if (password.value === password2.value) {
+        span.innerHTML = "";
+        password2.style.backgroundColor = "white"
+    }
+    else {
+        span.innerHTML = "La contraseña no coincide";
+        password2.style.backgroundColor = "red"
+    }
+}
+
+password.oninput = () => passwordMatch();
+password2.oninput = () => passwordMatch();
