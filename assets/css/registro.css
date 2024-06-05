@@ -27,6 +27,14 @@ main {
         }
     }
 
+    #email:user-invalid+span::before {
+        content: "Introduce una dirección de correo válida";
+    }
+
+    #password:user-invalid+span::before {
+        content: "La contraseña debe tener mínimo 6 carácteres";
+    }
+
     button {
         width: fit-content;
         justify-self: center;
