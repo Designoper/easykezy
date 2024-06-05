@@ -12,13 +12,16 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        border-radius: 0.5em;
+        margin-right: 1.5em;
     }
 
     article {
         display: flex;
+        width: 100%;
     }
     
-    span {
+    .product-cart {
         width: 100%;
         display: flex;
         justify-content: space-between;
