@@ -96,7 +96,7 @@ function registerUser() {
         });
     }
     else {
-        alert("Password doesn't match")
+        alert("Las contraseñas no coinciden")
     }
     
 }
