@@ -16,6 +16,7 @@
     --stroke: #2F2F2F;
 
     --semantic-color-blue: #205afb;
+    --semantic-color-red: #EB8484;
 
     scrollbar-color: var(--secondary-bg) var(--primary-bg);
 }
