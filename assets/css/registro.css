@@ -35,6 +35,10 @@ main {
         content: "La contraseña debe tener mínimo 6 carácteres";
     }
 
+    span{
+        color: rgb(255, 194, 194);
+    }
+
     button {
         width: fit-content;
         justify-self: center;
