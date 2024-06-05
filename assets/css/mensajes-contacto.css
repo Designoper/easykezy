@@ -4,12 +4,18 @@ main {
 		gap: 3em;
 	}
 
-	span{
+	span {
 		opacity: 50%;
 	}
 
+	.message{
+		padding: 1em;
+		background-color: black;
+		border-radius: 0.5em;
+	}
+
 	article {
-		padding: 1.25em;
+		padding: 1.5em 1.25em;
 		background-color: rgb(97, 97, 97);
 		border-radius: 1em;
 	}
