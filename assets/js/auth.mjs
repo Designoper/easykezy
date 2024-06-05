@@ -65,6 +65,7 @@ onAuthStateChanged(auth, (user) => {
 			<li><a href="./descargar-app.html">App</a></li>
 			<li><a href="./buzon-contacto.html">Contacto</a></li>
 			<li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+			<li><a href="./"><img src="./assets/img/header/cart.svg"></a></li>
 		</ul>
       `
 

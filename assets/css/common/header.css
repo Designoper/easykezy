@@ -54,6 +54,13 @@ header {
 			}
 		}
 
+		>ul {
+
+			img{
+				width: 2em;
+			}
+		}
+
 		button {
 			margin: 1.25em 10vw 0 auto;
 		}
@@ -116,7 +123,11 @@ header {
 
 			>ul {
 				display: flex;
-				align-items: baseline;
+				align-items: center;
+
+				img{
+					width: 2em;
+				}
 			}
 
 			a {
