@@ -42,7 +42,7 @@ const dbRef = ref(getDatabase(app));
 // Get mailbox collection
 get(child(dbRef, "mailbox")).then((snapshot) => {
     if (snapshot.exists()) {
-        document.getElementById("buzon").innerHTML = `<h2>Formularios recibidos</h2> `
+        // document.getElementById("buzon").innerHTML = `<h2>Formularios recibidos</h2> `
 
         // Convert data to object
         var mailList = snapshot.val();
@@ -52,10 +52,10 @@ get(child(dbRef, "mailbox")).then((snapshot) => {
             <article>
 
 				<ul>
-					<li>Nombre: ${mailList[element].name}</li>
-					<li>Correo: ${mailList[element].email}</li>
-					<li>Asunto: ${mailList[element].subject}</li>
-					<li>${mailList[element].body}</li>
+					<li><span>Nombre:</span> ${mailList[element].name}</li>
+					<li><span>Correo:</span> ${mailList[element].email}</li>
+					<li><span>Asunto:</span> ${mailList[element].subject}</li>
+					<li><span>Mensaje:</span> ${mailList[element].body}</li>
 				</ul>
 
 			</article>
