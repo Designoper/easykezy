@@ -50,7 +50,7 @@ get(child(dbRef, "games")).then((snapshot) => {
         for (const element in gameList) {
             document.getElementById("game-list").innerHTML += `
             <article>
-				<img src="./assets/img/videojuegos/diabloiv.jpg" alt="">
+				<img src="./assets/img/videojuegos/${gameList[element].image}" alt="">
 				<h4><span>${gameList[element].title}</span><span>${gameList[element].price}€</span></h4>
 				<button class="secondary card-buttons"><svg width="16" height="17" viewBox="0 0 16 17" fill="none"
 						xmlns="http://www.w3.org/2000/svg">
