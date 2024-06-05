@@ -60,6 +60,7 @@ if (sessionStorage.getItem("cartList") != null){
             // Clear default cart
             document.getElementById("product-list").innerHTML = "";
 
+            // Get game info according to cart games
             for (const element in gameList) {
                 cartGames.forEach(cartGame => {
                     if (cartGame == element) {
@@ -73,13 +74,13 @@ if (sessionStorage.getItem("cartList") != null){
                         </article>
                     `
 
+                        // Adding price
                         totalPrice += Number(gameList[element].price);
-
-                        console.log("cartGame = " + cartGame + " x element = " + element);
                     }
                 });
             }
 
+            // Show total price
             document.getElementById("totalPrice").innerHTML = totalPrice + "€";
 
         } else {

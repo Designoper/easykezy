@@ -6,6 +6,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
 const button = document.getElementById("submit");
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -42,52 +44,62 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const dbRef = ref(getDatabase(app));
 
 // Get navbar
 var navbar = document.getElementById("nav");
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      // USER IS SIGNED IN
-      // Se puede coger datos de "user". Ejemplo: "user.user.email" devuelve un string con el mail
-      navbar.innerHTML = `
-        <button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
-			<svg viewBox="0 0 556 556">
-				<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
-			</svg>
-		</button>
+      	// USER IS SIGNED IN
+      	// Se puede coger datos de "user". Ejemplo: "user.user.email" devuelve un string con el mail
 
-		<ul>
-			<li><a href="./">Inicio</a></li>
-			<li><a href="./quienes-somos.html">Quiénes somos</a></li>
-			<li><a href="./nuestro-proyecto.html">Nuestro proyecto</a></li>
-			<li><a href="./tienda.html">Tienda</a></li>
-			<li><a href="./descargar-app.html">App</a></li>
-			<li><a href="./buzon-contacto.html">Contacto</a></li>
-			<li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
-			<li><a href="./"><img src="./assets/img/header/cart.svg"></a></li>
-		</ul>
-      `
+		// Check if cart has items
+		var totalItems = 0;
+		if (sessionStorage.getItem("cartList") != null){
+			var itemsList = sessionStorage.getItem("cartList").split(",");
+
+			totalItems = itemsList.length;
+		}
+
+      	navbar.innerHTML = `
+        	<button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
+				<svg viewBox="0 0 556 556">
+					<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
+				</svg>
+			</button>
+
+			<ul>
+				<li><a href="./">Inicio</a></li>
+				<li><a href="./quienes-somos.html">Quiénes somos</a></li>
+				<li><a href="./nuestro-proyecto.html">Nuestro proyecto</a></li>
+				<li><a href="./tienda.html">Tienda</a></li>
+				<li><a href="./descargar-app.html">App</a></li>
+				<li><a href="./buzon-contacto.html">Contacto</a></li>
+				<li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+				<li><a href="./cart.html"><img src="./assets/img/header/cart.svg"><span>${totalItems}</span></a></li>
+			</ul>
+      	`
 
     } else {
-      // USER IS SIGNED OUT
-      navbar.innerHTML = `
-        <button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
-			<svg viewBox="0 0 556 556">
-				<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
-			</svg>
-		</button>
+      	// USER IS SIGNED OUT
+      	navbar.innerHTML = `
+        	<button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
+				<svg viewBox="0 0 556 556">
+					<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
+				</svg>
+			</button>
 
-		<ul>
-			<li><a href="./">Inicio</a></li>
-			<li><a href="./quienes-somos.html">Quiénes somos</a></li>
-			<li><a href="./nuestro-proyecto.html">Nuestro proyecto</a></li>
-			<li><a href="./tienda.html">Tienda</a></li>
-			<li><a href="./descargar-app.html">App</a></li>
-			<li><a href="./buzon-contacto.html">Contacto</a></li>
-			<li><a href="./login.html">Iniciar sesión</a></li>
-			<li><a href="./registro.html">Registrarse</a></li>
-		</ul>
-      `
+			<ul>
+				<li><a href="./">Inicio</a></li>
+				<li><a href="./quienes-somos.html">Quiénes somos</a></li>
+				<li><a href="./nuestro-proyecto.html">Nuestro proyecto</a></li>
+				<li><a href="./tienda.html">Tienda</a></li>
+				<li><a href="./descargar-app.html">App</a></li>
+				<li><a href="./buzon-contacto.html">Contacto</a></li>
+				<li><a href="./login.html">Iniciar sesión</a></li>
+				<li><a href="./registro.html">Registrarse</a></li>
+			</ul>
+      	`
     }
 });

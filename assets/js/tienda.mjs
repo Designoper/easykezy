@@ -84,6 +84,8 @@ window.addToCart = function(gameID){
 
         sessionStorage.setItem("cartList", cartList);
     }
+
+    window.location.href = "tienda.html";
 }
 
 // Adds game to cart and goes to cart
