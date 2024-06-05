@@ -111,11 +111,11 @@ button.onclick = () => registerUser();
 function passwordMatch() {
     if (password.value === password2.value) {
         span.innerHTML = "";
-        password2.style.backgroundColor = "white"
+        // password2.style.backgroundColor = "white"
     }
     else {
         span.innerHTML = "La contraseña no coincide";
-        password2.style.backgroundColor = "red"
+        // password2.style.backgroundColor = "red"
     }
 }
 
