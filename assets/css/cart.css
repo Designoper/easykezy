@@ -1,0 +1,27 @@
+.cesta {
+    display: flex;
+
+    h1 {
+        text-align: left;
+    }
+
+    .cart-photo {
+        background-image: url("../img/videojuegos/STREETFIGHTER.jpg");
+        width: 5em;
+        height: 5em;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    article {
+        display: flex;
+    }
+    
+    span {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
+}
