@@ -16,9 +16,12 @@
         margin-right: 1.5em;
     }
 
-    article {
+    .product-item {
         display: flex;
         width: 100%;
+        padding: 1em;
+        background-color: black;
+        border-radius: 0.7em;
     }
     
     .product-cart {
