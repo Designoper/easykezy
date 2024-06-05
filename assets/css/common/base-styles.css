@@ -80,6 +80,10 @@ figcaption {
     outline: var(--text) solid 4px;
 }
 
+:user-invalid{
+    background-color: rgb(241, 9, 9);
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
