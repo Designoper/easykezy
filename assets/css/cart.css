@@ -26,5 +26,11 @@
         display: flex;
         justify-content: space-between;
         align-items: end;
+
+        button {
+            display: flex;
+            color: var(--semantic-color-red);
+            align-items: center;
+        }
     }
 }
