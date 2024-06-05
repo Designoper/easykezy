@@ -52,7 +52,10 @@ var navbar = document.getElementById("nav");
 onAuthStateChanged(auth, (user) => {
     if (user) {
       	// USER IS SIGNED IN
-      	// Se puede coger datos de "user". Ejemplo: "user.user.email" devuelve un string con el mail
+      	// Se puede coger datos de "user". Ejemplo: "user.email" devuelve un string con el mail
+
+		// Save if user is signed in sessionStorage
+		sessionStorage.setItem("userIsSigned", true);
 
 		// Check if cart has items
 		var totalItems = 0;
@@ -62,28 +65,57 @@ onAuthStateChanged(auth, (user) => {
 			totalItems = itemsList.length;
 		}
 
-      	navbar.innerHTML = `
-        	<button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
-				<svg viewBox="0 0 556 556">
-					<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
-				</svg>
-			</button>
+		// Check if user is admin
+		var userID = user.email.split("@")[0];
 
-			<ul>
-				<li><a href="./">Inicio</a></li>
-				<li><a href="./quienes-somos.html">Quiénes somos</a></li>
-				<li><a href="./nuestro-proyecto.html">Nuestro proyecto</a></li>
-				<li><a href="./tienda.html">Tienda</a></li>
-				<li><a href="./descargar-app.html">App</a></li>
-				<li><a href="./buzon-contacto.html">Contacto</a></li>
-				<li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
-				<li><a href="./cart.html"><img src="./assets/img/header/cart.svg"><span>${totalItems}</span></a></li>
-			</ul>
-      	`
+		// Get rid of "."
+		if (userID.includes(".")) {
+			var str = userID.split(".");
+			userID = "";
 
-    } else {
-      	// USER IS SIGNED OUT
-      	navbar.innerHTML = `
+			str.forEach(element => {
+				userID += element;
+			});
+		}
+		
+		// Check from DB if admin
+		get(child(dbRef, "users/" + userID)).then((snapshot) => {
+			if (snapshot.exists()) {
+				var DBUser = snapshot.val()
+				
+				// Print header according if user is admin or not
+				if (DBUser.admin == true){
+					printSignedAdmin(totalItems);
+				}
+				else {
+					printSignedNoAdmin(totalItems);
+				}
+
+			} else {
+				console.log("No data available");
+
+				printSignedNoAdmin(totalItems);
+			}
+		}).catch((error) => {
+			console.error(error);
+		});
+
+
+
+
+	} else {
+		// USER IS SIGNED OUT
+
+		// Save if user is signed in sessionStorage
+		sessionStorage.setItem("userIsSigned", false);
+
+		printNotSigned();
+	}
+});
+
+// HEADER WITH NO SIGN IN
+function printNotSigned(){
+	navbar.innerHTML = `
         	<button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
 				<svg viewBox="0 0 556 556">
 					<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
@@ -101,5 +133,47 @@ onAuthStateChanged(auth, (user) => {
 				<li><a href="./registro.html">Registrarse</a></li>
 			</ul>
       	`
-    }
-});
+}
+
+function printSignedNoAdmin(numItems){
+	navbar.innerHTML = `
+        		<button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
+					<svg viewBox="0 0 556 556">
+						<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
+					</svg>
+				</button>
+
+				<ul>
+					<li><a href="./">Inicio</a></li>
+					<li><a href="./quienes-somos.html">Quiénes somos</a></li>
+					<li><a href="./nuestro-proyecto.html">Nuestro proyecto</a></li>
+					<li><a href="./tienda.html">Tienda</a></li>
+					<li><a href="./descargar-app.html">App</a></li>
+					<li><a href="./buzon-contacto.html">Contacto</a></li>
+					<li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+					<li><a href="./cart.html"><img src="./assets/img/header/cart.svg"><span>${numItems}</span></a></li>
+				</ul>
+      		`
+}
+
+function printSignedAdmin(numItems){
+	navbar.innerHTML = `
+        		<button type="button" popovertarget="nav" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
+					<svg viewBox="0 0 556 556">
+						<path d="m24.336 24.336 506.648 506.648M530.984 24.336 24.336 530.984" />
+					</svg>
+				</button>
+
+				<ul>
+					<li><a href="./">Inicio</a></li>
+					<li><a href="./quienes-somos.html">Quiénes somos</a></li>
+					<li><a href="./nuestro-proyecto.html">Nuestro proyecto</a></li>
+					<li><a href="./tienda.html">Tienda</a></li>
+					<li><a href="./descargar-app.html">App</a></li>
+					<li><a href="./buzon-contacto.html">Contacto</a></li>
+					<li><a href="./admin.html">Admin</a></li>
+					<li><a href="./cerrar-sesion.html">Cerrar sesión</a></li>
+					<li><a href="./cart.html"><img src="./assets/img/header/cart.svg"><span>${numItems}</span></a></li>
+				</ul>
+      		`
+}

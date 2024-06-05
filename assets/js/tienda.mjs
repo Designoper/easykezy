@@ -39,6 +39,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const dbRef = ref(getDatabase(app));
 
+
 // Get games collection
 get(child(dbRef, "games")).then((snapshot) => {
     if (snapshot.exists()) {
@@ -70,8 +71,32 @@ get(child(dbRef, "games")).then((snapshot) => {
     console.error(error);
 });
 
+console.log(sessionStorage.getItem("userIsSigned"));
+
 // Adds game to cart
 window.addToCart = function(gameID){
+     /*  DOESN'T WORK BECAUSE IT DOESN'T WANT TO WORK FOR SOME REASON
+    if (sessionStorage.getItem("userIsSigned") == true){
+        if(sessionStorage.getItem("cartList") != null){
+            var cartList = sessionStorage.getItem("cartList");
+    
+            cartList += "," + gameID;
+    
+            sessionStorage.setItem("cartList", cartList);
+        }
+        else {
+            var cartList = [gameID];
+    
+            sessionStorage.setItem("cartList", cartList);
+        }
+    
+        window.location.href = "tienda.html";
+    }
+    else {
+        window.location.href = "index.html";
+    }
+    */
+   
     if(sessionStorage.getItem("cartList") != null){
         var cartList = sessionStorage.getItem("cartList");
 
@@ -90,6 +115,28 @@ window.addToCart = function(gameID){
 
 // Adds game to cart and goes to cart
 window.gotoCart = function(gameID){
+    /*  DOESN'T WORK BECAUSE IT DOESN'T WANT TO WORK FOR SOME REASON
+    if (sessionStorage.getItem("userIsSigned") == true){
+        if(sessionStorage.getItem("cartList") != null){
+            var cartList = sessionStorage.getItem("cartList");
+    
+            cartList += "," + gameID;
+    
+            sessionStorage.setItem("cartList", cartList);
+        }
+        else {
+            var cartList = [gameID];
+    
+            sessionStorage.setItem("cartList", cartList);
+        }
+    
+        window.location.href = "cart.html";
+    }
+    else {
+        window.location.href = "index.html";
+    }
+    */
+
     if(sessionStorage.getItem("cartList") != null){
         var cartList = sessionStorage.getItem("cartList");
 
