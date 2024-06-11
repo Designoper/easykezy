@@ -18,7 +18,7 @@
     --semantic-color-blue: #205afb;
     --semantic-color-red: #EB8484;
 
-    scrollbar-color: var(--secondary-bg) var(--primary-bg);
+    scrollbar-color: var(--primary-bg) var(--text);
 }
 
 body {
@@ -63,17 +63,6 @@ li {
         font-weight: bold;
         font-size: 1.25em;
     }
-}
-
-figure {
-    display: flex;
-    flex-flow: column wrap;
-    gap: 1.25em 0;
-}
-
-figcaption {
-    text-wrap: balance;
-    text-align: right;
 }
 
 :focus-visible {
