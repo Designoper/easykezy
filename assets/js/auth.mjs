@@ -55,7 +55,7 @@ onAuthStateChanged(auth, (user) => {
       	// Se puede coger datos de "user". Ejemplo: "user.email" devuelve un string con el mail
 
 		// Save if user is signed in sessionStorage
-		sessionStorage.setItem("userIsSigned", true);
+		sessionStorage.setItem("userIsSigned", "true");
 
 		// Check if cart has items
 		var totalItems = 0;
@@ -101,13 +101,11 @@ onAuthStateChanged(auth, (user) => {
 		});
 
 
-
-
 	} else {
 		// USER IS SIGNED OUT
 
 		// Save if user is signed in sessionStorage
-		sessionStorage.setItem("userIsSigned", false);
+		sessionStorage.setItem("userIsSigned", "false");
 
 		printNotSigned();
 	}
