@@ -65,7 +65,10 @@ if (sessionStorage.getItem("userIsAdmin") == "true"){
     });
 }
 else {
+    // If not admin then redirect to home page
     document.getElementById("buzon").innerHTML += `
                 <p>Acceso denegado</p>
-                `
+                `;
+    
+    window.location.href="index.html";
 }
