@@ -23,17 +23,13 @@ a {
 	color: inherit;
 }
 
-summary {
-	cursor: pointer;
-}
-
 button {
 	all: unset;
 	display: grid;
 	cursor: pointer;
 }
 
-textarea{
+textarea {
 	font: inherit;
 }
 

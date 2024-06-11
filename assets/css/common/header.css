@@ -55,8 +55,7 @@ header {
 		}
 
 		>ul {
-
-			img{
+			img {
 				width: 2em;
 			}
 		}
@@ -125,7 +124,7 @@ header {
 				display: flex;
 				align-items: center;
 
-				img{
+				img {
 					width: 2em;
 				}
 			}
