@@ -1,5 +1,4 @@
 .cesta {
-
     h1 {
         text-align: left;
     }
@@ -29,7 +28,7 @@
         justify-content: space-between;
         width: 100%;
     }
-    
+
     .product-total {
         display: flex;
         justify-content: space-between;

@@ -50,10 +50,6 @@ main {
 					&:nth-of-type(7) {
 						grid-area: p7;
 					}
-
-					/* &:nth-of-type(8) {
-						grid-area: p8;
-					} */
 				}
 
 				h2 {

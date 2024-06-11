@@ -7,7 +7,6 @@ main {
 			grid-template-rows: min-content;
 
 			grid-template-areas:
-
 				"h2 img1 img1"
 				"p1 img1 img1"
 				"p2 img1 img1"
