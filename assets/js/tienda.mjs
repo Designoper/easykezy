@@ -4,14 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-
 // Your web app's Firebase configuration
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
 
@@ -75,8 +68,7 @@ console.log(sessionStorage.getItem("userIsSigned"));
 
 // Adds game to cart
 window.addToCart = function(gameID){
-     /*  DOESN'T WORK BECAUSE IT DOESN'T WANT TO WORK FOR SOME REASON
-    if (sessionStorage.getItem("userIsSigned") == true){
+    if (sessionStorage.getItem("userIsSigned") == "true"){
         if(sessionStorage.getItem("cartList") != null){
             var cartList = sessionStorage.getItem("cartList");
     
@@ -95,28 +87,11 @@ window.addToCart = function(gameID){
     else {
         window.location.href = "index.html";
     }
-    */
-   
-    if(sessionStorage.getItem("cartList") != null){
-        var cartList = sessionStorage.getItem("cartList");
-
-        cartList += "," + gameID;
-
-        sessionStorage.setItem("cartList", cartList);
-    }
-    else {
-        var cartList = [gameID];
-
-        sessionStorage.setItem("cartList", cartList);
-    }
-
-    window.location.href = "tienda.html";
 }
 
 // Adds game to cart and goes to cart
 window.gotoCart = function(gameID){
-    /*  DOESN'T WORK BECAUSE IT DOESN'T WANT TO WORK FOR SOME REASON
-    if (sessionStorage.getItem("userIsSigned") == true){
+    if (sessionStorage.getItem("userIsSigned") == "true"){
         if(sessionStorage.getItem("cartList") != null){
             var cartList = sessionStorage.getItem("cartList");
     
@@ -135,20 +110,4 @@ window.gotoCart = function(gameID){
     else {
         window.location.href = "index.html";
     }
-    */
-
-    if(sessionStorage.getItem("cartList") != null){
-        var cartList = sessionStorage.getItem("cartList");
-
-        cartList += "," + gameID;
-
-        sessionStorage.setItem("cartList", cartList);
-    }
-    else {
-        var cartList = [gameID];
-
-        sessionStorage.setItem("cartList", cartList);
-    }
-
-    window.location.href = "cart.html";
 }
