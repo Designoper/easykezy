@@ -94,6 +94,7 @@ if (sessionStorage.getItem("cartList") != null){
 }
 else {
     document.getElementById("product-list").innerHTML = "No hay artículos en la cesta"
+    document.getElementById("final-product-list").innerHTML = "No hay artículos en la cesta"
     document.getElementById("totalPrice").innerHTML = ""
 }
 
