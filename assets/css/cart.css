@@ -68,6 +68,10 @@
     row-gap: 3em;
     column-gap: 3em;
     width: 100%;
+
+    .product-total {
+        margin-top: auto;
+    }
 }
 
 @media screen and (541px <=width) {
