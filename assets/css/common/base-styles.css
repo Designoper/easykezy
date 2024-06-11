@@ -244,7 +244,7 @@ font-family: Arial, sans-serif;
 
     cursor: pointer;
 
-    color: #333;
+    color: white;
     z-index: 99;
 
 }
@@ -268,7 +268,7 @@ font-family: Arial, sans-serif;
 
 .popup button {
 
-    background-color: #4caf50;
+    background-color: #000000;
 
     color: #fff;
 
