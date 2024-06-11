@@ -1,6 +1,6 @@
 .cesta {
     width: 100%;
-    
+
     h1 {
         text-align: left;
     }
@@ -43,4 +43,31 @@
         color: var(--semantic-color-red);
     }
 
+}
+.pedido {
+    width: 100%;
+
+    h1 {
+        text-align: left;
+    }
+
+    .pedido-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+}
+
+.total-cesta {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 3em;
+    column-gap: 3em;
+    width: 100%;
+}
+
+@media screen and (541px <=width) {
+    .total-cesta {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
