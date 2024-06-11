@@ -64,8 +64,6 @@ get(child(dbRef, "games")).then((snapshot) => {
     console.error(error);
 });
 
-console.log(sessionStorage.getItem("userIsSigned"));
-
 // Adds game to cart
 window.addToCart = function(gameID){
     if (sessionStorage.getItem("userIsSigned") == "true"){

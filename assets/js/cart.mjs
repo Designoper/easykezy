@@ -4,14 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-
 // Your web app's Firebase configuration
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
 
@@ -52,7 +45,6 @@ if (sessionStorage.getItem("cartList") != null){
             // Convert cart data (string) to array
             var cartGames = cartList.split(",");
 
-            console.log(cartGames);
 
             // For total price
             var totalPrice = 0;

@@ -4,14 +4,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// TODO: Add SDKs for Firebase products that you want to use
-
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 
 // Your web app's Firebase configuration
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
 
@@ -40,31 +34,38 @@ const app = initializeApp(firebaseConfig);
 const dbRef = ref(getDatabase(app));
 
 // Get mailbox collection
-get(child(dbRef, "mailbox")).then((snapshot) => {
-    if (snapshot.exists()) {
-        // document.getElementById("buzon").innerHTML = `<h2>Formularios recibidos</h2> `
-
-        // Convert data to object
-        var mailList = snapshot.val();
-
-        for (const element in mailList) {
-            document.getElementById("buzon").innerHTML += `
-            <article>
-
-				<ul>
-					<li><span>Nombre:</span> ${mailList[element].name}</li>
-					<li><span>Correo:</span> ${mailList[element].email}</li>
-					<li class="message"><h3>${mailList[element].subject}</h3>
-					${mailList[element].body}</li>
-				</ul>
-
-			</article>
-            `
+if (sessionStorage.getItem("userIsAdmin") == "true"){
+    get(child(dbRef, "mailbox")).then((snapshot) => {
+        if (snapshot.exists()) {
+            // document.getElementById("buzon").innerHTML = `<h2>Formularios recibidos</h2> `
+    
+            // Convert data to object
+            var mailList = snapshot.val();
+    
+            for (const element in mailList) {
+                document.getElementById("buzon").innerHTML += `
+                <article>
+    
+                    <ul>
+                        <li><span>Nombre:</span> ${mailList[element].name}</li>
+                        <li><span>Correo:</span> ${mailList[element].email}</li>
+                        <li class="message"><h3>${mailList[element].subject}</h3>
+                        ${mailList[element].body}</li>
+                    </ul>
+    
+                </article>
+                `
+            }
+    
+        } else {
+            console.log("No data available");
         }
-
-    } else {
-        console.log("No data available");
-    }
-}).catch((error) => {
-    console.error(error);
-});
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+else {
+    document.getElementById("buzon").innerHTML += `
+                <p>Acceso denegado</p>
+                `
+}

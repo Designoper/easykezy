@@ -8,16 +8,11 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
+
 const button = document.getElementById("submit");
-
-// TODO: Add SDKs for Firebase products that you want to use
-
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 
 // Your web app's Firebase configuration
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
 
@@ -85,9 +80,11 @@ onAuthStateChanged(auth, (user) => {
 				
 				// Print header according if user is admin or not
 				if (DBUser.admin == true){
+					sessionStorage.setItem("userIsAdmin", "true");
 					printSignedAdmin(totalItems);
 				}
 				else {
+					sessionStorage.setItem("userIsAdmin", "false");
 					printSignedNoAdmin(totalItems);
 				}
 

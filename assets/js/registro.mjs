@@ -2,25 +2,18 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
 
 const button = document.getElementById("submit");
 const span = document.getElementById("passwordCheck");
 const password = document.getElementById("password");
 const password2 = document.getElementById("conf-password");
 
-// TODO: Add SDKs for Firebase products that you want to use
-
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 
 // Your web app's Firebase configuration
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
 
@@ -49,8 +42,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-// const analytics = getAnalytics(app);
-
 function registerUser() {
     // Disable button so user cannot spam
     button.setAttribute("disabled", "");
@@ -61,7 +52,6 @@ function registerUser() {
     let confPassword = document.getElementById("conf-password").value;
 
     if (password == confPassword) {
-        // span.innerHTML = "";
         // Register
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -100,9 +90,6 @@ function registerUser() {
 
             });
     }
-    // else {
-    //    span.innerHTML = "Las contraseñas no coinciden"
-    // }
 
 }
 
@@ -111,11 +98,9 @@ button.onclick = () => registerUser();
 function passwordMatch() {
     if (password.value === password2.value) {
         span.innerHTML = "";
-        // password2.style.backgroundColor = "white"
     }
     else {
         span.innerHTML = "La contraseña no coincide";
-        // password2.style.backgroundColor = "red"
     }
 }
 
