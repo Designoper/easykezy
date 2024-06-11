@@ -1,4 +1,6 @@
 .cesta {
+    width: 100%;
+    
     h1 {
         text-align: left;
     }
@@ -40,4 +42,5 @@
         border: var(--semantic-color-red) 0.13em solid;
         color: var(--semantic-color-red);
     }
+
 }
