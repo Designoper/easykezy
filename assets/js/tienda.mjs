@@ -83,7 +83,7 @@ window.addToCart = function(gameID){
         window.location.href = "tienda.html";
     }
     else {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
 }
 
@@ -106,6 +106,6 @@ window.gotoCart = function(gameID){
         window.location.href = "cart.html";
     }
     else {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
     }
 }
