@@ -51,20 +51,30 @@ if (sessionStorage.getItem("cartList") != null){
 
             // Clear default cart
             document.getElementById("product-list").innerHTML = "";
+            document.getElementById("final-product-list").innerHTML = "";
 
             // Get game info according to cart games
             for (const element in gameList) {
                 cartGames.forEach(cartGame => {
                     if (cartGame == element) {
                         document.getElementById("product-list").innerHTML += `
-                        <article class="product-item">
-                            <figure class="cart-photo" style="background-image: url('./assets/img/videojuegos/${gameList[element].image}');"></figure>
-                            <div class="cart-info">
-                                <h4>${gameList[element].title}</h4>
-                                <p>${gameList[element].price}€</p>
-                            </div>
-                        </article>
-                    `
+                            <article class="product-item">
+                                <figure class="cart-photo" style="background-image: url('./assets/img/videojuegos/${gameList[element].image}');"></figure>
+                                <div class="cart-info">
+                                    <h4>${gameList[element].title}</h4>
+                                    <p>${gameList[element].price}€</p>
+                                </div>
+                            </article>
+                        `
+
+                        document.getElementById("final-product-list").innerHTML += `
+                            <article class="product-item">
+						        <div class="cart-info pedido-card">
+							        <h4>${gameList[element].title}</h4>
+							        <p>${gameList[element].price}€</p>
+						        </div>
+					        </article>
+                        `
 
                         // Adding price
                         totalPrice += Number(gameList[element].price);
@@ -73,7 +83,7 @@ if (sessionStorage.getItem("cartList") != null){
             }
 
             // Show total price
-            document.getElementById("totalPrice").innerHTML = totalPrice + "€";
+            document.getElementById("totalPrice").innerHTML ="Total " + (totalPrice + 2.99) + "€";
 
         } else {
             console.log("No data available");
